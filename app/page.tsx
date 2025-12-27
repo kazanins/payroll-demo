@@ -40,7 +40,7 @@ function AppShell() {
           type: 'sign-up',
           label: 'Tempo Payroll',
         },
-      })
+      } as any)
 
       const account = result?.accounts?.[0]
       if (account) {
@@ -106,10 +106,9 @@ function AppShell() {
           <div className="landing-hero">
             <div className="landing-copy">
               <div className="eyebrow">Tempo Payroll</div>
-              <h2>Run payroll with clarity.</h2>
+              <h2>Run payroll with stablecoins.</h2>
               <p className="muted">
-                Upload payment files, execute payouts, and track every run in one streamlined
-                workspace.
+                Upload payment files, execute payouts, and see for yourself why stablecoin payments kick *ss.
               </p>
               <div className="landing-actions">
                 <button

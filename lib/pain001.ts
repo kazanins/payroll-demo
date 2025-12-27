@@ -87,6 +87,6 @@ export function parsePain001(xml: string, tokenDecimals: number): { payments: Pa
     return { endToEndId, recipient, amount, ccy }
   })
 
-  const totalAmount = payments.reduce((acc, p) => acc + p.amount, 0n)
+  const totalAmount = payments.reduce((acc, p) => acc + p.amount, BigInt(0))
   return { payments, totalAmount }
 }

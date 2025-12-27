@@ -54,6 +54,20 @@ export function UploadPain001() {
           Browse
         </label>
       </div>
+      <div
+        className="upload-help"
+        style={{ marginTop: 8, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+      >
+        <span>Don&apos;t have a pain.001 file?</span>
+        <a
+          className="upload-help-link"
+          href="/testpain001.xml"
+          download
+          style={{ color: '#2563eb', fontWeight: 600, textDecoration: 'underline' }}
+        >
+          Download a sample
+        </a>
+      </div>
       {error ? <div style={{ marginTop: 8, color: '#b00020' }}>{error}</div> : null}
     </div>
   )

@@ -40,7 +40,7 @@ type Actions = {
 
 export const usePayrollStore = create<State & Actions>((set) => ({
   payments: [],
-  totalAmount: 0n,
+  totalAmount: BigInt(0),
   isExecuting: false,
   batchTxHashes: [],
   paymentTxHashes: {},
@@ -65,7 +65,7 @@ export const usePayrollStore = create<State & Actions>((set) => ({
     set({
       pain001Raw: undefined,
       payments: [],
-      totalAmount: 0n,
+      totalAmount: BigInt(0),
       isExecuting: false,
       executionError: undefined,
       batchTxHashes: [],

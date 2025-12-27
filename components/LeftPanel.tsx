@@ -53,7 +53,7 @@ export function LeftPanel() {
     query: { enabled: !!payerAddress, refetchInterval: 3_000 },
   })
 
-  const payerBalance = (data?.[0]?.result as bigint | undefined) ?? 0n
+  const payerBalance = (data?.[0]?.result as bigint | undefined) ?? BigInt(0)
 
   return (
     <section className="panel">
