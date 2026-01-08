@@ -2,11 +2,11 @@
 
 import React from 'react'
 import { formatUnits } from 'viem'
-import { tempoTestnet } from 'viem/chains'
 import { usePayrollStore } from '../store/payrollStore'
 import { DEFAULT_PAYROLL_TOKEN } from '../lib/constants'
 import { executePayrollBatched } from '../lib/executePayrollBatched'
 import { buildPain002 } from '../lib/pain002'
+import { tempoModerato } from '../lib/tempoChain'
 
 const formatCurrency = (raw: string) => {
   const [wholeRaw, fractionRaw = ''] = raw.split('.')
@@ -118,7 +118,7 @@ export function MiddlePanel() {
             {payments.map((p) => {
               const status = paymentStatuses[p.endToEndId] ?? 'PENDING'
               const txHash = paymentTxHashes[p.endToEndId]
-              const explorerBase = tempoTestnet.blockExplorers?.default.url
+              const explorerBase = tempoModerato.blockExplorers?.default.url
               const txUrl = explorerBase && txHash ? `${explorerBase}/tx/${txHash}` : undefined
               const statusClass =
                 status === 'FAILED'

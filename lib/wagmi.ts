@@ -1,14 +1,14 @@
 'use client'
 
 import { createConfig, http } from 'wagmi'
-import { tempoTestnet } from 'viem/chains'
 import { KeyManager, webAuthn } from 'tempo.ts/wagmi'
 import { DEFAULT_PAYROLL_TOKEN } from './constants'
+import { tempoModerato } from './tempoChain'
 
 export const wagmiConfig = createConfig({
   chains: [
     // Tempo TS README shows extending chain with feeToken :contentReference[oaicite:7]{index=7}
-    tempoTestnet.extend({ feeToken: DEFAULT_PAYROLL_TOKEN.address }),
+    tempoModerato.extend({ feeToken: DEFAULT_PAYROLL_TOKEN.address }),
   ],
   connectors: [
     webAuthn({
@@ -16,6 +16,6 @@ export const wagmiConfig = createConfig({
     }),
   ],
   transports: {
-    [tempoTestnet.id]: http(),
+    [tempoModerato.id]: http('https://rpc.moderato.tempo.xyz'),
   },
 })

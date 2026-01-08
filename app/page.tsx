@@ -4,8 +4,8 @@ import React from 'react'
 import { WagmiProvider, useConnect, useConnection, useDisconnect } from 'wagmi'
 import { Actions } from 'tempo.ts/wagmi'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { tempoTestnet } from 'viem/chains'
 import { wagmiConfig } from '../lib/wagmi'
+import { tempoModerato } from '../lib/tempoChain'
 import { LeftPanel } from '../components/LeftPanel'
 import { MiddlePanel } from '../components/MiddlePanel'
 
@@ -23,7 +23,7 @@ function AppShell() {
 
   const connector = connectors?.[0]
   const isAuthed = isMounted && !!address
-  const explorerBase = tempoTestnet.blockExplorers?.default.url
+  const explorerBase = tempoModerato.blockExplorers?.default.url
   const addressUrl = explorerBase && address ? `${explorerBase}/address/${address}` : undefined
 
   const onLogin = () => {

@@ -1,4 +1,4 @@
-export const TEMPO_CHAIN = 'tempoTestnet' as const
+export const TEMPO_CHAIN = 'tempoModerato' as const
 
 // Tempo docs often reference AlphaUSD on testnet in examples :contentReference[oaicite:5]{index=5}
 export const TOKENS = {

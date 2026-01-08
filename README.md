@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Tempo Testnet
+
+This demo targets Tempo's Moderato testnet.
+
+- RPC: `https://rpc.moderato.tempo.xyz`
+- Chain ID: `42431`
+- Explorer: `https://explore.tempo.xyz`
+
 ## Getting Started
 
 First, run the development server:
