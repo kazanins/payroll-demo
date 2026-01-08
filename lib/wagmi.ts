@@ -5,10 +5,14 @@ import { KeyManager, webAuthn } from 'tempo.ts/wagmi'
 import { DEFAULT_PAYROLL_TOKEN } from './constants'
 import { tempoModerato } from './tempoChain'
 
+const extendedTempoChain = tempoModerato.extend({
+  feeToken: DEFAULT_PAYROLL_TOKEN.address
+})
+
 export const wagmiConfig = createConfig({
   chains: [
-    // Tempo TS README shows extending chain with feeToken :contentReference[oaicite:7]{index=7}
-    tempoModerato.extend({ feeToken: DEFAULT_PAYROLL_TOKEN.address }),
+    // Tempo TS README shows extending chain with feeToken
+    extendedTempoChain,
   ],
   connectors: [
     webAuthn({
@@ -16,6 +20,6 @@ export const wagmiConfig = createConfig({
     }),
   ],
   transports: {
-    [tempoModerato.id]: http('https://rpc.moderato.tempo.xyz'),
+    [extendedTempoChain.id]: http('https://rpc.moderato.tempo.xyz'),
   },
 })

@@ -30,11 +30,59 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Deploy on Railway
 
-This repo is ready for Railway via Nixpacks. In Railway:
+This repo is ready for Railway via Nixpacks.
 
-1. Create a new project from this GitHub repo.
-2. Use the default build settings from `railway.toml`.
-3. Deploy. Railway will run `pnpm build` and `pnpm start`.
+### Prerequisites
+- GitHub account with this repo pushed
+- Railway account (sign up at https://railway.app)
+
+### Deployment Steps
+
+1. **Push to GitHub**: Ensure your latest changes are committed and pushed to GitHub
+   ```bash
+   git add .
+   git commit -m "Prepare for Railway deployment"
+   git push origin main
+   ```
+
+2. **Create Railway Project**:
+   - Go to https://railway.app/dashboard
+   - Click "New Project"
+   - Select "Deploy from GitHub repo"
+   - Select this repository
+
+3. **Configure Build Settings**:
+   - Railway will automatically detect `railway.toml`
+   - Build command: `pnpm build`
+   - Start command: `pnpm start`
+   - Port: 3000 (Next.js default)
+
+4. **Deploy**:
+   - Click "Deploy"
+   - Railway will automatically build and deploy your app
+   - Monitor the deployment logs for any issues
+
+5. **Access Your App**:
+   - Once deployed, Railway will provide a public URL
+   - Click the generated URL to access your Tempo Payroll Demo
+
+### Configuration
+
+The deployment is configured via `railway.toml`:
+- **Builder**: Nixpacks (automatically detects pnpm)
+- **Build**: `pnpm build`
+- **Start**: `pnpm start`
+- **Healthcheck**: `/` endpoint with 100s timeout
+- **Restart Policy**: On failure, max 10 retries
+
+### Environment Variables
+
+No environment variables are required for this demo. All Tempo testnet configuration is hardcoded:
+- RPC: `https://rpc.moderato.tempo.xyz`
+- Chain ID: `42431`
+- Token: AlphaUSD (`0x20c0000000000000000000000000000000000001`)
+
+If you need to customize these values, you can add environment variables in Railway's dashboard and update the configuration files accordingly.
 
 ## Learn More
 
