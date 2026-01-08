@@ -28,6 +28,14 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Deploy on Railway
+
+This repo is ready for Railway via Nixpacks. In Railway:
+
+1. Create a new project from this GitHub repo.
+2. Use the default build settings from `railway.toml`.
+3. Deploy. Railway will run `pnpm build` and `pnpm start`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
