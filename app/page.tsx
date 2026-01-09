@@ -59,8 +59,8 @@ function AppShell() {
         <div className="topbar-brand">
           <div className="brand-mark">T</div>
           <div>
-            <div className="eyebrow">Payroll</div>
-            <h1>Overview</h1>
+            <div className="eyebrow">Onchain</div>
+            <h1>Payroll</h1>
           </div>
         </div>
         {!isAuthed ? (
