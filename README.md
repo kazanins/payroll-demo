@@ -28,9 +28,9 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Deploy on Railway
+## Deploy on Railway (Static Hosting)
 
-This repo is ready for Railway via Nixpacks.
+This repo is configured for static export and Railway Static Hosting.
 
 ### Prerequisites
 - GitHub account with this repo pushed
@@ -54,8 +54,8 @@ This repo is ready for Railway via Nixpacks.
 3. **Configure Build Settings**:
    - Railway will automatically detect `railway.toml`
    - Build command: `pnpm build`
-   - Start command: `pnpm start`
-   - Port: 3000 (Next.js default)
+   - Publish directory: `out`
+   - No start command is required for static hosting
 
 4. **Deploy**:
    - Click "Deploy"
@@ -71,9 +71,7 @@ This repo is ready for Railway via Nixpacks.
 The deployment is configured via `railway.toml`:
 - **Builder**: Nixpacks (automatically detects pnpm)
 - **Build**: `pnpm build`
-- **Start**: `pnpm start`
-- **Healthcheck**: `/` endpoint with 100s timeout
-- **Restart Policy**: On failure, max 10 retries
+- **Next.js output mode**: static export (`out/`)
 
 ### Environment Variables
 
